@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tarikh19/data/quizData.dart';
 import 'dart:math';
 import 'package:tarikh19/data/tawarikh.dart';
 import 'package:tarikh19/widgets/popUpAlert2.dart';
@@ -74,15 +73,6 @@ class _TawarikhState extends State<Tawarikh> {
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.amber[800]),
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: Icon(Icons.timer),
-                    title: Text('امتحان مصغر - 5 دقائق'),
-                    onTap: () {
-                      Navigator.pushNamed(context, '/quiz', arguments: [quiz1]);
-                    },
                   ),
                 ),
                 Card(

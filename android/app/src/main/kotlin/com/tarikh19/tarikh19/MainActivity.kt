@@ -1,4 +1,4 @@
-package com.example.tarikh19
+package com.tarikh19.tarikh19
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

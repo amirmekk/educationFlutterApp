@@ -71,12 +71,7 @@ class _Mostala7atState extends State<Mostala7at> {
                         color: Colors.amber[800]),
                   ),
                 ),
-                Card(
-                  child: ListTile(
-                    leading: Icon(Icons.timer),
-                    title: Text('امتحان مصغر - 5 دقائق'),
-                  ),
-                ),
+                
                 Card(
                   child: ListTile(
                     leading: Icon(Icons.library_books),
