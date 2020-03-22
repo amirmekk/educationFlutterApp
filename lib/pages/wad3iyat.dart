@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarikh19/pages/bookmarks.dart';
+import 'package:tarikh19/widgets/popUpAlert2.dart';
 
 class Wad3iyaPage extends StatefulWidget {
   final List appBarTitleData;
@@ -25,27 +26,11 @@ class _Wad3iyaPageState extends State<Wad3iyaPage> {
                   child: ListTile(
                     onTap: () {
                       showDialog(
-                          context: context,
-                          builder: (_) => Directionality(
-                                textDirection: TextDirection.rtl,
-                                child: AlertDialog(
-                                  title: Text(
-                                      '${widget.appBarTitleData[1][index].itemOne}'),
-                                  content: Text(
-                                      '${widget.appBarTitleData[1][index].itemTwo}'),
-                                  actions: <Widget>[
-                                    GestureDetector(
-                                      child: Icon(
-                                        Icons.check_circle,
-                                        size: 30,
-                                      ),
-                                      onTap: () {
-                                        Navigator.pop(context, 'OK');
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              ));
+                        context: context,
+                        builder: (_) =>
+                            PopUpAlert2(data: widget.appBarTitleData[1][index]),
+                      );
+                      setState(() {});
                     },
                     trailing: IconButton(
                       icon: checkIfExist(
