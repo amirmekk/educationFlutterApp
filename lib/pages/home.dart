@@ -17,8 +17,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   RateMyApp ratingConditions = RateMyApp(
     preferencesPrefix: 'ratingConditions_',
-    minDays: 3,
-    minLaunches: 3,
+    minDays: 0,
+    minLaunches: 1,
     remindDays: 15,
     remindLaunches: 30,
   );
@@ -41,78 +41,79 @@ class _HomeState extends State<Home> {
     super.initState();
     ratingConditions.init().then((_) {
       if (ratingConditions.shouldOpenDialog) {
-      ratingConditions.showStarRateDialog(
-        context,
-        title: 'هل أعجبك تطبيق تاريخ19؟',
-        message: 'قم بتقييم التطبيق من أجل دعمنا لإضافة كل جديد',
-        dialogStyle: DialogStyle(
-          titleAlign: TextAlign.center,
-          messageAlign: TextAlign.center,
-          messagePadding: EdgeInsets.only(
-            bottom: 20,
+        ratingConditions.showStarRateDialog(
+          context,
+          title: 'هل أعجبك تطبيق تاريخ19؟',
+          message: 'قم بتقييم التطبيق من أجل دعمنا لإضافة كل جديد',
+          dialogStyle: DialogStyle(
+            titleAlign: TextAlign.center,
+            messageAlign: TextAlign.center,
+            messagePadding: EdgeInsets.only(
+              bottom: 20,
+            ),
           ),
-        ),
-        starRatingOptions: StarRatingOptions(),
-        actionsBuilder: (_, stars) {
-          return [
-            FlatButton(
-              child: Text('OK'),
-              onPressed: () async {
-                if (stars != null) {
-                  if (stars <= 3) {
-                    Navigator.pop(context);
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return Directionality(
-                            textDirection: TextDirection.rtl,
-                            child: AlertDialog(
-                              actions: <Widget>[
-                                FlatButton.icon(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    icon: Icon(
-                                      Icons.cancel,
-                                      color: Colors.white,
-                                    ),
-                                    label: Text(
-                                      'إغلاق النافذة',
-                                      style: TextStyle(color: Colors.white),
-                                    ))
-                              ],
-                              backgroundColor: Colors.amber[800],
-                              content: Text(
-                                'شكرا على تقييمك ، نحن نعمل على تحسيين التطبيق ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+          starRatingOptions: StarRatingOptions(),
+          actionsBuilder: (_, stars) {
+            return [
+              FlatButton(
+                child: Text('OK'),
+                onPressed: () async {
+                  if (stars != null) {
+                    if (stars <= 3) {
+                      Navigator.pop(context);
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Directionality(
+                              textDirection: TextDirection.rtl,
+                              child: AlertDialog(
+                                actions: <Widget>[
+                                  FlatButton.icon(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      icon: Icon(
+                                        Icons.cancel,
+                                        color: Colors.white,
+                                      ),
+                                      label: Text(
+                                        'إغلاق النافذة',
+                                        style: TextStyle(color: Colors.white),
+                                      ))
+                                ],
+                                backgroundColor: Colors.amber[800],
+                                content: Text(
+                                  'شكرا على تقييمك ، نحن نعمل على تحسيين التطبيق ',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
-                            ),
-                          );
-                        });
-                  }
+                            );
+                          });
+                    }
 
-                  if (stars > 3) {
-                    LaunchReview.launch(
-                        androidAppId: "com.fc.play.nes.arcade2");
+                    if (stars > 3) {
+                      Navigator.pop(context);
+                      LaunchReview.launch(
+                          androidAppId: "com.fc.play.nes.arcade2");
+                    }
+                  } else {
+                    Navigator.pop(context);
                   }
-                } else {
-                  Navigator.pop(context);
-                }
-              },
-            ),
-            FlatButton(
-                onPressed: () {
-                  ratingConditions.reset();
-                  Navigator.pop(context);
                 },
-                child: Text('لاحقا'))
-          ];
-        },
-      );
+              ),
+              FlatButton(
+                  onPressed: () {
+                    ratingConditions.reset();
+                    Navigator.pop(context);
+                  },
+                  child: Text('لاحقا'))
+            ];
+          },
+        );
       }
     });
   }
