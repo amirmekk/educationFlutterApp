@@ -17,8 +17,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   RateMyApp ratingConditions = RateMyApp(
     preferencesPrefix: 'ratingConditions_',
-    minDays: 0,
-    minLaunches: 1,
+    minDays: 3,
+    minLaunches: 3,
     remindDays: 15,
     remindLaunches: 30,
   );
