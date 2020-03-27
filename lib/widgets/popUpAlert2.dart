@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarikh19/pages/bookmarks.dart';
+import 'package:tarikh19/tools/showAd.dart';
 
 class PopUpAlert2 extends StatefulWidget {
   final data;
@@ -16,17 +17,14 @@ class _PopUpAlert2State extends State<PopUpAlert2> {
       textDirection: TextDirection.rtl,
       child: AlertDialog(
         backgroundColor: Colors.amber[800],
-        shape:RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20) ,
-        )  ,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
         title: Center(
           child: Text(
             '${widget.data.itemOne}',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25 , 
-              fontFamily: 'Amiri'
-            ),
+                fontWeight: FontWeight.bold, fontSize: 25, fontFamily: 'Amiri'),
           ),
         ),
         content: Text('${widget.data.itemTwo}'),
@@ -38,6 +36,7 @@ class _PopUpAlert2State extends State<PopUpAlert2> {
                 IconButton(
                   icon: checkIfExist(widget.data.itemOne),
                   onPressed: () {
+                    showAdOrNot();
                     setState(() {
                       updateBookmarks(widget.data.itemOne, widget.data.itemTwo);
                     });
@@ -49,6 +48,7 @@ class _PopUpAlert2State extends State<PopUpAlert2> {
                     size: 30,
                   ),
                   onPressed: () {
+                    showAdOrNot();
                     Navigator.pop(context, 'OK');
                   },
                 ),

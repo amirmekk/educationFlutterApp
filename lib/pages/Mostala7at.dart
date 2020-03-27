@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:tarikh19/data/mostala7atData.dart';
+import 'package:tarikh19/tools/showAd.dart';
 import 'package:tarikh19/widgets/popUpAlert2.dart';
 
 class Mostala7at extends StatefulWidget {
@@ -24,12 +25,14 @@ class _Mostala7atState extends State<Mostala7at> {
         body: Column(
           children: <Widget>[
             Container(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () {
+                    showAdOrNot();
                     Navigator.pushNamed(context, '/courseAndQuiz',
                         arguments: [_wa7adat[index], 'مصطلحات', 4, 2]);
                   },
@@ -38,7 +41,7 @@ class _Mostala7atState extends State<Mostala7at> {
                     width: 200,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.amber[200],
                     ),
                     child: Container(
                       child: Padding(
@@ -71,12 +74,12 @@ class _Mostala7atState extends State<Mostala7at> {
                         color: Colors.amber[800]),
                   ),
                 ),
-                
                 Card(
                   child: ListTile(
                     leading: Icon(Icons.library_books),
                     title: Text(' مصطلح عشوائي'),
                     onTap: () {
+                      showAdOrNot();
                       var rng = new Random();
                       var randomItem =
                           mostala7at[rng.nextInt(mostala7at.length)];
@@ -92,6 +95,7 @@ class _Mostala7atState extends State<Mostala7at> {
                     leading: Icon(Icons.format_align_left),
                     title: Text('جميع المصطلحات'),
                     onTap: () {
+                      showAdOrNot();
                       Navigator.pushNamed(context, '/all',
                           arguments: ['الشخصيات', mostala7at]);
                     },

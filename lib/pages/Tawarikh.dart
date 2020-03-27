@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:tarikh19/data/tawarikh.dart';
+import 'package:tarikh19/tools/showAd.dart';
 import 'package:tarikh19/widgets/popUpAlert2.dart';
 
 class Tawarikh extends StatefulWidget {
@@ -23,12 +24,14 @@ class _TawarikhState extends State<Tawarikh> {
         body: Column(
           children: <Widget>[
             Container(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () {
+                    showAdOrNot();
                     Navigator.pushNamed(context, '/courseAndQuiz', arguments: [
                       _wa7adat[index],
                       'تواريخ',
@@ -42,7 +45,7 @@ class _TawarikhState extends State<Tawarikh> {
                     width: 200,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.amber[200],
                     ),
                     child: Container(
                       child: Padding(
@@ -80,6 +83,7 @@ class _TawarikhState extends State<Tawarikh> {
                     leading: Icon(Icons.library_books),
                     title: Text('تاريخ عشوائي'),
                     onTap: () {
+                      showAdOrNot();
                       var rng = new Random();
                       var randomItem = tawarikh[rng.nextInt(tawarikh.length)];
                       showDialog(
@@ -94,6 +98,7 @@ class _TawarikhState extends State<Tawarikh> {
                     leading: Icon(Icons.format_align_left),
                     title: Text('جميع التواريخ'),
                     onTap: () {
+                      showAdOrNot();
                       Navigator.pushNamed(context, '/all',
                           arguments: ['التواريخ', tawarikh]);
                     },

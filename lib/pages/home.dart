@@ -8,6 +8,7 @@ import 'package:tarikh19/data/tawarikh.dart';
 import 'package:tarikh19/pages/all.dart';
 import 'package:tarikh19/pages/bookmarks.dart';
 import 'package:launch_review/launch_review.dart';
+import 'package:tarikh19/tools/showAd.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+//needed to rate my app
   RateMyApp ratingConditions = RateMyApp(
     preferencesPrefix: 'ratingConditions_',
     minDays: 3,
@@ -22,6 +24,8 @@ class _HomeState extends State<Home> {
     remindDays: 15,
     remindLaunches: 30,
   );
+//each one represents one of the main pages '3anasir' of the home page
+//and _selected index change between them when the users clicks on any one using the _onItemTaped function
   int _selectedIndex = 0;
   List<Widget> _pages = [
     HomePage(),
@@ -31,6 +35,7 @@ class _HomeState extends State<Home> {
     Bookmarks(),
   ];
   _onItemTaped(int index) {
+    showAdOrNot();
     setState(() {
       _selectedIndex = index;
     });
@@ -39,6 +44,10 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
+    //if you want to update the item stored in the shared preference uncomment the following line
+    //and add updatePrefrencesInBG to the imports
+    //updateItem();
+    //this is where i implemented the rate my app functionality
     ratingConditions.init().then((_) {
       if (ratingConditions.shouldOpenDialog) {
         ratingConditions.showStarRateDialog(
@@ -98,7 +107,7 @@ class _HomeState extends State<Home> {
                     if (stars > 3) {
                       Navigator.pop(context);
                       LaunchReview.launch(
-                          androidAppId: "com.fc.play.nes.arcade2");
+                          androidAppId: "com.tarikh19.tarikh19");
                     }
                   } else {
                     Navigator.pop(context);
@@ -117,15 +126,6 @@ class _HomeState extends State<Home> {
       }
     });
   }
-
-  Future<void> selectNotification(String payload) {
-    setState(() {
-      itemNumber++;
-    });
-    return null;
-  }
-
-  int itemNumber = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -237,6 +237,7 @@ class _HomePageState extends State<HomePage> {
                           itemCount: 3,
                           itemBuilder: (context, index) => GestureDetector(
                             onTap: () {
+                              showAdOrNot();
                               Navigator.pushNamed(context, myRoutes[index]);
                             },
                             child: Padding(
@@ -301,6 +302,7 @@ class _HomePageState extends State<HomePage> {
                           trailing: IconButton(
                             icon: Icon(Icons.cached),
                             onPressed: () {
+                              showAdOrNot();
                               setState(() {
                                 randomItem = allData[
                                     new Random().nextInt(allData.length)];
@@ -328,6 +330,7 @@ class _HomePageState extends State<HomePage> {
                             color: Colors.amber[200],
                             child: ListTile(
                                 onTap: () {
+                                  showAdOrNot();
                                   Navigator.pushNamed(
                                     context,
                                     '/courseAndQuiz2',

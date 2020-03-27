@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tarikh19/pages/bookmarks.dart';
 import 'package:tarikh19/tools/search.dart';
-
-
+import 'package:tarikh19/tools/showAd.dart';
 
 class All extends StatefulWidget {
   final List allList;
-  All({Key key ,this.allList}): super(key: key);
+  All({Key key, this.allList}) : super(key: key);
   @override
   _AllState createState() => _AllState();
 }
@@ -23,7 +22,8 @@ class _AllState extends State<All> {
             IconButton(
                 onPressed: () {
                   showSearch(
-                      context: context, delegate: DataSearch(data: widget.allList[1]));
+                      context: context,
+                      delegate: DataSearch(data: widget.allList[1]));
                 },
                 icon: Icon(Icons.search))
           ],
@@ -34,17 +34,17 @@ class _AllState extends State<All> {
           itemBuilder: (context, index) => Card(
             child: ListTile(
               onTap: () {
-                
+                showAdOrNot();
               },
               trailing: IconButton(
                 icon: checkIfExist(widget.allList[1][index].itemOne),
                 onPressed: () {
+                  showAdOrNot();
                   setState(() {
-                    updateBookmarks(
-                      widget.allList[1][index].itemOne, widget.allList[1][index].itemTwo);
+                    updateBookmarks(widget.allList[1][index].itemOne,
+                        widget.allList[1][index].itemTwo);
                   });
-                  
-                }, 
+                },
               ),
               subtitle: Text('${widget.allList[1][index].itemTwo}'),
               isThreeLine: true,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tarikh19/data/allData.dart';
 import 'package:tarikh19/pages/bookmarks.dart';
 import 'package:tarikh19/data/quizData.dart';
+import 'package:tarikh19/tools/showAd.dart';
 
 class CourseAndQuiz2 extends StatefulWidget {
   final List courseAndQuiz;
@@ -30,7 +31,7 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
     List _quizzes = [
       [quiz1, quiz2, quiz3, quiz4],
       [quiz5, quiz6, quiz7, quiz8],
-      [quiz9, quiz10, quiz11 ,quiz11],
+      [quiz9, quiz10, quiz11, quiz11],
     ];
     List filteredTawarikhData = [];
     List filteredChakhsiyatData = [];
@@ -62,6 +63,7 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
               IconButton(
                   icon: Icon(Icons.search),
                   onPressed: () {
+                    showAdOrNot();
                     Navigator.pushNamed(context, '/all',
                         arguments: ['العناصر', allData]);
                   })
@@ -85,6 +87,7 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
                         filteredTawarikhData[index].itemOne,
                       ),
                       onPressed: () {
+                        showAdOrNot();
                         setState(() {
                           updateBookmarks(filteredTawarikhData[index].itemOne,
                               filteredTawarikhData[index].itemTwo);
@@ -121,6 +124,7 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
                         filteredTawarikhData[index].itemOne,
                       ),
                       onPressed: () {
+                        showAdOrNot();
                         setState(() {
                           updateBookmarks(filteredTawarikhData[index].itemOne,
                               filteredTawarikhData[index].itemTwo);
@@ -141,6 +145,7 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
                         filteredTawarikhData[index].itemOne,
                       ),
                       onPressed: () {
+                        showAdOrNot();
                         setState(() {
                           updateBookmarks(filteredTawarikhData[index].itemOne,
                               filteredTawarikhData[index].itemTwo);
@@ -164,6 +169,7 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
                       ),
                     ),
                     onTap: () {
+                      showAdOrNot();
                       Navigator.pushNamed(context, '/quiz', arguments: [
                         _quizzes[widget.courseAndQuiz[0] - 1][index]
                       ]);
