@@ -56,7 +56,7 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: DefaultTabController(
-        length: 4,
+        length: 5,
         child: Scaffold(
           appBar: AppBar(
             actions: <Widget>[
@@ -69,12 +69,17 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
                   })
             ],
             title: Text('${_wa7adat[widget.courseAndQuiz[0]]}'),
-            bottom: TabBar(tabs: [
-              Tab(text: 'تواريخ'),
-              Tab(text: 'شخصيات'),
-              Tab(text: 'مصطلحات'),
-              Tab(text: 'امتحان قصير'),
-            ]),
+            bottom: TabBar(
+              indicatorColor: Colors.amber[400],
+              isScrollable: true,
+              tabs: [
+                Tab(text: 'تواريخ'),
+                Tab(text: 'شخصيات'),
+                Tab(text: 'مصطلحات'),
+                Tab(text: 'امتحان قصير'),
+                Tab(text: 'الدروس'),
+              ],
+            ),
           ),
           body: TabBarView(
             children: [
@@ -177,6 +182,28 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
                   ),
                 ),
               ),
+              ListView.builder(
+                itemBuilder: (context, index) => Card(
+                  child: ListTile(
+                    onTap: () {
+                      showAdOrNot();
+                      Navigator.pushNamed(context, '/dorossPage', arguments: [
+                        widget.courseAndQuiz[4][index][0],
+                        widget.courseAndQuiz[0],
+                        index + 1
+                      ]);
+                    },
+                    title: Text(widget.courseAndQuiz[4][index][0]),
+                    subtitle: Text((widget.courseAndQuiz[4][index].length == 1)
+                        ? ''
+                        : widget.courseAndQuiz[4][index][1]),
+                  ),
+                ),
+                itemCount: (widget.courseAndQuiz[0] == 1 ||
+                        widget.courseAndQuiz[0] == 2)
+                    ? 4
+                    : 3,
+              )
             ],
           ),
         ),
