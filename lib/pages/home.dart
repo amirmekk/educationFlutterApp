@@ -163,14 +163,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> anasirMokhtalifa = ['التواريخ', 'الشخصيات', 'المصطلحات'];
+  List<String> anasirMokhtalifa = [
+    'التواريخ',
+    'الشخصيات',
+    'المصطلحات',
+    'الملخصات',
+  ];
   List<Widget> anasirMokhtalifaIcons = [
     Icon(Icons.date_range, color: Colors.amber[800]),
     Icon(Icons.person, color: Colors.amber[800]),
     Icon(Icons.library_books, color: Colors.amber[800]),
+    Icon(Icons.chrome_reader_mode, color: Colors.amber[800]),
   ];
   List<String> wa7adat = ['الوحدة الاولئ', 'الوحدة الثانية', 'الوحدة الثالثة'];
-  List<String> myRoutes = ['/tawaraikh', '/chakhsiyat', '/mostala7at'];
+  List<String> myRoutes = [
+    '/tawaraikh',
+    '/chakhsiyat',
+    '/mostala7at',
+    '/doross'
+  ];
   var randomItem = allData[new Random().nextInt(allData.length)];
 
   @override
@@ -234,7 +245,7 @@ class _HomePageState extends State<HomePage> {
                         height: 200,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: 3,
+                          itemCount: 4,
                           itemBuilder: (context, index) => GestureDetector(
                             onTap: () {
                               showAdOrNot();

@@ -7,6 +7,8 @@ import 'package:tarikh19/pages/bookmarks.dart';
 import 'package:tarikh19/pages/courseAndQuiz.dart';
 import 'package:tarikh19/pages/courseAndQuiz2.dart';
 import 'package:tarikh19/pages/home.dart';
+import 'package:tarikh19/pages/Doross.dart';
+import 'package:tarikh19/pages/DorossPage.dart';
 import 'package:tarikh19/pages/quiz.dart';
 import 'package:tarikh19/pages/resultAfterQuiz.dart';
 import 'package:tarikh19/pages/splashScreen.dart';
@@ -30,6 +32,18 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => CourseAndQuiz2(
             courseAndQuiz: args,
+          ),
+        );
+      case '/dorossPage':
+        return MaterialPageRoute(
+          builder: (_) => DorossPage(
+            data: args,
+          ),
+        );
+      case '/doross':
+        return MaterialPageRoute(
+          builder: (_) => Doross(
+            data: args,
           ),
         );
       case '/chakhsiyat':
