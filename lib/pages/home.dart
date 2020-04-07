@@ -167,7 +167,7 @@ class _HomePageState extends State<HomePage> {
     'التواريخ',
     'الشخصيات',
     'المصطلحات',
-    'الملخصات',
+    'الدروس',
   ];
   final List dorossTabData = [
     [

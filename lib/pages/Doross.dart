@@ -28,6 +28,8 @@ class _DorossState extends State<Doross> {
                     'الوحدة الأولى : تطور العالم في ظل الثنائية القطبية 1945-1989',
                     style: TextStyle(
                       fontFamily: 'Amiri',
+                      color: Colors.amber[800],
+                      fontSize: 20,
                     ),
                   ),
                   children: <Widget>[
@@ -84,7 +86,11 @@ class _DorossState extends State<Doross> {
                   backgroundColor: Colors.white,
                   title: Text(
                     'الوحدة الثانية : الجزائر مابين 1945-1989',
-                    style: TextStyle(fontFamily: 'Amiri'),
+                    style: TextStyle(
+                      fontFamily: 'Amiri',
+                      color: Colors.amber[800],
+                      fontSize: 20,
+                    ),
                   ),
                   children: <Widget>[
                     Card(
@@ -142,7 +148,11 @@ class _DorossState extends State<Doross> {
                   backgroundColor: Colors.white,
                   title: Text(
                     'الوحدة الثالثة : تطور العالم الثالث مابين 1945- 1989',
-                    style: TextStyle(fontFamily: 'Amiri'),
+                    style: TextStyle(
+                      fontFamily: 'Amiri',
+                      color: Colors.amber[800],
+                      fontSize: 20,
+                    ),
                   ),
                   children: <Widget>[
                     Card(

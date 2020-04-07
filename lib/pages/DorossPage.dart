@@ -33,10 +33,28 @@ class _DorossPageState extends State<DorossPage> {
           onTap: () {
             showAdOrNot();
           },
-          child: ListView(
-            children: <Widget>[
-              daressBody[widget.data[1] - 1][widget.data[2] - 1]
-            ],
+          onLongPress: () {
+            showAdOrNot();
+          },
+          child: Container(
+            margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage('media/texture.jpg') , fit: BoxFit.fill),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                color: Colors.purple,
+                width: 3,
+              ),
+            ),
+            padding: EdgeInsets.fromLTRB(5, 0, 20, 0),
+            child: ListView(
+              children: <Widget>[
+                SizedBox(
+                  height: 20,
+                ),
+                daressBody[widget.data[1] - 1][widget.data[2] - 1]
+              ],
+            ),
           ),
         ),
       ),
