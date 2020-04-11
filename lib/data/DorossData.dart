@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pinch_zoom_image_updated/pinch_zoom_image_updated.dart';
+import 'package:tarikh19/tools/showAd.dart';
 
 Container wad3iya1 = Container(
   child: Column(
@@ -16,6 +18,22 @@ Container wad3iya1 = Container(
       _h2Text('العلمية و التكنولوجية'),
       _normalText(
           '- تطوير الترسانة العسكرية بعد تفجير الذرة\n- وتطور العلوم والتكنولوجيا\n- بعيد و غزو الفضاء وتطور وسائل الاتصال والمعلوماتية\n'),
+      SizedBox(
+        height: 20,
+      ),
+      PinchZoomImage(
+        image: Image.asset('media/maps/east_west.jpg'),
+        zoomedBackgroundColor: Colors.amber[800],
+        onZoomStart: () {
+          showAdOrNot();
+        },
+        onZoomEnd: () {
+          showAdOrNot();
+        },
+      ),
+      SizedBox(
+        height: 20,
+      ),
       _h1Text('دراسة وتحديد طبيعة العلاقات بين الكتلتين'),
       _normalText(
           'كانت العلاقات بينهما علاقة صراع في إطار ما بعرف بالحرب الباردة وهي عبارة عن صراع إيديولوجي واستراتيجي بين المعسكر الشرقي الشيوعي بزعامة الاتحاد السوفييتي والغربي الرأسمالي بزعامة الولايات المتحدة الأمريكية ، استخدمت فيه مختلف الوسائل ماعدا الواجهة المباشرة '),
@@ -53,11 +71,43 @@ Container wad3iya1 = Container(
       _h4Text(' حلف بغداد :'),
       _normalText(
           ' تأسس في 24 فيفري 1955 وضم العراق وتركيا وبريطانيا وباكستان وإيران تم  تحويل ����ركزه إلى تركيا وأصبح يعرف بالحلف المركزي -سانتو- بعد انسحاب العراق منه سنة 1958 م '),
+      SizedBox(
+        height: 15,
+      ),
+      PinchZoomImage(
+        image: Image.asset('media/maps/a7laf.jpg'),
+        zoomedBackgroundColor: Colors.amber[800],
+        onZoomStart: () {
+          showAdOrNot();
+        },
+        onZoomEnd: () {
+          showAdOrNot();
+        },
+      ),
+      SizedBox(
+        height: 15,
+      ),
       _h2Text('استراتيجية المعسكر الشرقي : '),
       _h3Text('عسكريا:'),
       _h4Text('حلف وارسو 14 ماي 1955 :'),
       _normalText(
           'سمي كذلك نسبة إلى فرصوفيا عاصمة بولونيا مقر الحلف ، جاء كرد فعل على الأحلاف الغربية وضم الاتحاد السوفييتي وأوروبا الشرقية ماعدا يوغسلافيا ، وقد كان لتفجير الاتحاد السوفيتي القنبلة الذرية في 21 / 09 / 1949 أثر كبير في قوة الملف والمعسكر الشرقي على العموم'),
+      SizedBox(
+        height: 15,
+      ),
+      PinchZoomImage(
+        image: Image.asset('media/maps/some_countries.jpg'),
+        zoomedBackgroundColor: Colors.amber[800],
+        onZoomStart: () {
+          showAdOrNot();
+        },
+        onZoomEnd: () {
+          showAdOrNot();
+        },
+      ),
+      SizedBox(
+        height: 15,
+      ),
       _h3Text('اقتصاديا وسياسيا : '),
       _h4Text(' منظمة الكوميكون:'),
       _normalText(
@@ -78,6 +128,22 @@ Container wad3iya1 = Container(
       _h2Text('على دول العالم:'),
       _normalText(
           ' - التقارب الافروآسيوي وظهور حركة عدم الانحياز 1961 . \n - انقسام العديد من الشعوب بفعل الحرب الباردة مثل كوريا - فيتنام - المانيا ۔\n - ازدياد نشاط الحركات التحررية في العالم الثالث وتلقي الدعم من المعسكر الشرقي\n '),
+      SizedBox(
+        height: 15,
+      ),
+      PinchZoomImage(
+        image: Image.asset('media/maps/europe.jpg'),
+        zoomedBackgroundColor: Colors.amber[800],
+        onZoomStart: () {
+          showAdOrNot();
+        },
+        onZoomEnd: () {
+          showAdOrNot();
+        },
+      ),
+      SizedBox(
+        height: 15,
+      ),
     ],
   ),
 );
@@ -135,6 +201,16 @@ Container wad3iya2 = Container(
       _h4Text('نتائجها وانعكاساتها :'),
       _normalText(
           '- تدخل هيئة الأمم وعقد لقاءات ومفاوضات بين الولايات المتحدة والاتحاد السوفييتي أفضت إلى سحب السوفييت للصواريخ من كوبا مقابل سحب الأمريكان للصواريخ من تركيا \n- إنشاء ما يعرف بالخط الأحمر بين موسكو وواشنطن 1963 ، وتبني الطرفين لسياسة الانفراج الدولي\n- خروج كوبا وزعيمها  فيدال كاسترو منتصرة من الأزمة وتحول كوبا إلى قلعة مساندة لحركات التحرر في العالم الثالث \n'),
+      SizedBox(
+        height: 20,
+      ),
+      PinchZoomImage(
+        image: Image.asset('media/maps/azamat_dowaliya.jpg'),
+        zoomedBackgroundColor: Colors.amber[800],
+      ),
+      SizedBox(
+        height: 20,
+      ),
     ],
   ),
 );
@@ -279,6 +355,22 @@ Container wad3iya5 = Container(
       _h2Text('ميثاق  طرابلس :'),
       _normalText(
           ': جاء بعد مؤتمر طرابلس بليبيا في جوان 1962 ، وضع جملة من الاختبارات التي تسير عليها البلاد بعد الاستقلال أهمها اختيار النهج الاشتراكي كوسيلة للتنمية والإبقاء على الأحادية الحزبية .'),
+      SizedBox(
+        height: 20,
+      ),
+      PinchZoomImage(
+        image: Image.asset('media/maps/algeria.jpg'),
+        zoomedBackgroundColor: Colors.amber[800],
+        onZoomStart: () {
+          showAdOrNot();
+        },
+        onZoomEnd: () {
+          showAdOrNot();
+        },
+      ),
+      SizedBox(
+        height: 20,
+      ),
     ],
   ),
 );
@@ -329,6 +421,22 @@ Container wad3iya6 = Container(
       _h5Text('قراراته : '),
       _normalText(
           '- اصدار ميثاق الصومام وهي وثيقة سياسية مرجعية للثورة . \n- تأسيس المجلس الوطني للثورة وهو بمثابة برلمان مشرع للثورة وضم 34 عضوا . \n- إنشاء لجنة التنسيق والتنفيذ بلجان فرعية تابعة لها وهي هيئة تنفيذية. \n- تقسيم الجزائر إلى 6 ولايات عسكرية وتعيين مسؤول برتبة عقيد على كل ولاية وتقسيم كل ولاية إلى مناطق ونواحي ودوائر . \n- إقرار مبدأ القيادة الجماعية والأولوية للداخل على الخارج والسياسي على العسكري . \n- البناء الهيكلي لجيش التحرير الوطني - مسؤوليات - تقسيم - رتب .... \n- تدويل القضية الجزائرية  . \n- وضع مخططات قتالية جديدة والاعتماد على حرب العصابات \n'),
+      SizedBox(
+        height: 20,
+      ),
+      PinchZoomImage(
+        image: Image.asset('media/maps/algeria2.jpg'),
+        zoomedBackgroundColor: Colors.amber[800],
+        onZoomStart: () {
+          showAdOrNot();
+        },
+        onZoomEnd: () {
+          showAdOrNot();
+        },
+      ),
+      SizedBox(
+        height: 20,
+      ),
       _h5Text('رد فعل الاستعمار:'),
       _normalText(
           '- صب غضبه على البيت الذي عقد فيه المؤتمر فتم تدميره .\n- زيادة على القيام بعمليات تمشيط واسعة ببلاد القبائل والانتقام من سكان المنطقة بمختلف أنواع التعذيب وفرض الحصار وسياسة التجويع عليهم \n'),
