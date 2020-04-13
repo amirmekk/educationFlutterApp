@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pinch_zoom_image_updated/pinch_zoom_image_updated.dart';
-import 'package:tarikh19/tools/showAd.dart';
+import 'package:photo_view/photo_view.dart';
+
+myImage(String url) {
+  return Container(
+      height: 250,
+      child: PhotoView(
+          imageProvider: AssetImage(url),
+          backgroundDecoration: BoxDecoration(color: Colors.amber[200])));
+}
 
 Container wad3iya1 = Container(
   child: Column(
@@ -21,16 +28,7 @@ Container wad3iya1 = Container(
       SizedBox(
         height: 20,
       ),
-      PinchZoomImage(
-        image: Image.asset('media/maps/east_west.jpg'),
-        zoomedBackgroundColor: Colors.amber[800],
-        onZoomStart: () {
-          showAdOrNot();
-        },
-        onZoomEnd: () {
-          showAdOrNot();
-        },
-      ),
+      myImage('media/maps/east_west.jpg'),
       SizedBox(
         height: 20,
       ),
@@ -74,16 +72,7 @@ Container wad3iya1 = Container(
       SizedBox(
         height: 15,
       ),
-      PinchZoomImage(
-        image: Image.asset('media/maps/a7laf.jpg'),
-        zoomedBackgroundColor: Colors.amber[800],
-        onZoomStart: () {
-          showAdOrNot();
-        },
-        onZoomEnd: () {
-          showAdOrNot();
-        },
-      ),
+      myImage('media/maps/a7laf.jpg'),
       SizedBox(
         height: 15,
       ),
@@ -95,16 +84,7 @@ Container wad3iya1 = Container(
       SizedBox(
         height: 15,
       ),
-      PinchZoomImage(
-        image: Image.asset('media/maps/some_countries.jpg'),
-        zoomedBackgroundColor: Colors.amber[800],
-        onZoomStart: () {
-          showAdOrNot();
-        },
-        onZoomEnd: () {
-          showAdOrNot();
-        },
-      ),
+      myImage('media/maps/some_countries.jpg'),
       SizedBox(
         height: 15,
       ),
@@ -131,16 +111,7 @@ Container wad3iya1 = Container(
       SizedBox(
         height: 15,
       ),
-      PinchZoomImage(
-        image: Image.asset('media/maps/europe.jpg'),
-        zoomedBackgroundColor: Colors.amber[800],
-        onZoomStart: () {
-          showAdOrNot();
-        },
-        onZoomEnd: () {
-          showAdOrNot();
-        },
-      ),
+      myImage('media/maps/europe.jpg'),
       SizedBox(
         height: 15,
       ),
@@ -204,10 +175,7 @@ Container wad3iya2 = Container(
       SizedBox(
         height: 20,
       ),
-      PinchZoomImage(
-        image: Image.asset('media/maps/azamat_dowaliya.jpg'),
-        zoomedBackgroundColor: Colors.amber[800],
-      ),
+      myImage('media/maps/azamat_dowaliya.jpg'),
       SizedBox(
         height: 20,
       ),
@@ -358,16 +326,7 @@ Container wad3iya5 = Container(
       SizedBox(
         height: 20,
       ),
-      PinchZoomImage(
-        image: Image.asset('media/maps/algeria.jpg'),
-        zoomedBackgroundColor: Colors.amber[800],
-        onZoomStart: () {
-          showAdOrNot();
-        },
-        onZoomEnd: () {
-          showAdOrNot();
-        },
-      ),
+      myImage('media/maps/algeria.jpg'),
       SizedBox(
         height: 20,
       ),
@@ -424,16 +383,7 @@ Container wad3iya6 = Container(
       SizedBox(
         height: 20,
       ),
-      PinchZoomImage(
-        image: Image.asset('media/maps/algeria2.jpg'),
-        zoomedBackgroundColor: Colors.amber[800],
-        onZoomStart: () {
-          showAdOrNot();
-        },
-        onZoomEnd: () {
-          showAdOrNot();
-        },
-      ),
+      myImage('media/maps/algeria2.jpg'),
       SizedBox(
         height: 20,
       ),

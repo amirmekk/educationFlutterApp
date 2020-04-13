@@ -46,7 +46,7 @@ class _DorossPageState extends State<DorossPage> {
                 width: 3,
               ),
             ),
-            padding: EdgeInsets.fromLTRB(5, 0, 20, 0),
+            padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
             child: ListView(
               children: <Widget>[
                 SizedBox(
