@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:photo_view/photo_view.dart';
+import 'package:pinch_zoom_image_last/pinch_zoom_image_last.dart';
+import 'package:tarikh19/tools/showAd.dart';
 
 myImage(String url) {
-  return Container(
-      height: 250,
-      child: PhotoView(
-          imageProvider: AssetImage(url),
-          backgroundDecoration: BoxDecoration(color: Colors.amber[200])));
+  return PinchZoomImage(
+    image: Image.asset(url),
+    zoomedBackgroundColor: Color.fromRGBO(240, 240, 240, 1.0),
+    onZoomStart: () {
+      showAdOrNot();
+    },
+  );
 }
+
+// myImage1(String url) {
+//   return Container(
+//       height: 250,
+//       child: PhotoView(
+//           imageProvider: AssetImage(url),
+//           backgroundDecoration: BoxDecoration(color: Colors.amber[200])));
+// }
 
 Container wad3iya1 = Container(
   child: Column(
