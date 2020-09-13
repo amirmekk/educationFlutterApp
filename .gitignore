@@ -38,3 +38,5 @@ lib/generated_plugin_registrant.dart
 
 /android/key.properties
 /android/key.jks
+/ios/
+lib/data/

@@ -9,6 +9,7 @@ import 'package:tarikh19/pages/courseAndQuiz2.dart';
 import 'package:tarikh19/pages/home.dart';
 import 'package:tarikh19/pages/Doross.dart';
 import 'package:tarikh19/pages/DorossPage.dart';
+import 'package:tarikh19/pages/imtihanat.dart';
 import 'package:tarikh19/pages/quiz.dart';
 import 'package:tarikh19/pages/resultAfterQuiz.dart';
 import 'package:tarikh19/pages/splashScreen.dart';
@@ -87,6 +88,10 @@ class RouteGenerator {
           builder: (_) => Quiz(
             quizData: args,
           ),
+        );
+      case '/imtihanat':
+        return MaterialPageRoute(
+          builder: (_) => Imitihanat(),
         );
 
       default:

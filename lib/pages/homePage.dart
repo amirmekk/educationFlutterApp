@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
     'الشخصيات',
     'المصطلحات',
     'الدروس',
+    'الإمتحانات',
   ];
   final List dorossTabData = [
     [
@@ -58,13 +59,15 @@ class _HomePageState extends State<HomePage> {
     Icon(Icons.person, color: Colors.amber[800]),
     Icon(Icons.library_books, color: Colors.amber[800]),
     Icon(Icons.chrome_reader_mode, color: Colors.amber[800]),
+    Icon(Icons.alarm, color: Colors.amber[800]),
   ];
   List<String> wa7adat = ['الوحدة الاولئ', 'الوحدة الثانية', 'الوحدة الثالثة'];
   List<String> myRoutes = [
     '/tawaraikh',
     '/chakhsiyat',
     '/mostala7at',
-    '/doross'
+    '/doross',
+    '/imtihanat',
   ];
   var randomItem = allData[new Random().nextInt(allData.length)];
 
@@ -129,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                         height: 200,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: 4,
+                          itemCount: 5,
                           itemBuilder: (context, index) => GestureDetector(
                             onTap: () {
                               showAdOrNot();
