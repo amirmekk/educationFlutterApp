@@ -32,12 +32,12 @@ class _ChakhsiyatState extends State<Chakhsiyat> {
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () {
                     showAdOrNot();
-                    Navigator.pushNamed(context, '/courseAndQuiz', arguments: [
-                      _wa7adat[index],
-                      'تواريخ',
-                      4,
-                      2,
-                      index + 1
+                    List newChakhsiyat = chakhsiyat
+                        .where((i) => i.wihda == (index + 1))
+                        .toList();
+                    Navigator.pushNamed(context, '/wad3iyaPage', arguments: [
+                      'شخصيات ${_wa7adat[index]}',
+                      newChakhsiyat
                     ]);
                   },
                   child: Container(

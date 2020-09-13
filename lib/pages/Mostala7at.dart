@@ -33,8 +33,13 @@ class _Mostala7atState extends State<Mostala7at> {
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () {
                     showAdOrNot();
-                    Navigator.pushNamed(context, '/courseAndQuiz',
-                        arguments: [_wa7adat[index], 'مصطلحات', 4, 2]);
+                    List newMostala7at = mostala7at
+                        .where((i) => i.wihda == (index + 1))
+                        .toList();
+                    Navigator.pushNamed(context, '/wad3iyaPage', arguments: [
+                      'مصظلحات ${_wa7adat[index]}',
+                      newMostala7at
+                    ]);
                   },
                   child: Container(
                     margin: EdgeInsets.all(10),
