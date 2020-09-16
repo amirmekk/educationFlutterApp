@@ -126,13 +126,13 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
                   child: ListTile(
                     trailing: IconButton(
                       icon: checkIfExist(
-                        filteredTawarikhData[index].itemOne,
+                        filteredChakhsiyatData[index].itemOne,
                       ),
                       onPressed: () {
                         showAdOrNot();
                         setState(() {
-                          updateBookmarks(filteredTawarikhData[index].itemOne,
-                              filteredTawarikhData[index].itemTwo);
+                          updateBookmarks(filteredChakhsiyatData[index].itemOne,
+                              filteredChakhsiyatData[index].itemTwo);
                         });
                       },
                     ),
@@ -147,13 +147,13 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
                   child: ListTile(
                     trailing: IconButton(
                       icon: checkIfExist(
-                        filteredTawarikhData[index].itemOne,
+                        filteredMostala7atData[index].itemOne,
                       ),
                       onPressed: () {
                         showAdOrNot();
                         setState(() {
-                          updateBookmarks(filteredTawarikhData[index].itemOne,
-                              filteredTawarikhData[index].itemTwo);
+                          updateBookmarks(filteredMostala7atData[index].itemOne,
+                              filteredMostala7atData[index].itemTwo);
                         });
                       },
                     ),
