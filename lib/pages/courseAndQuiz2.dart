@@ -13,30 +13,12 @@ class CourseAndQuiz2 extends StatefulWidget {
 }
 
 class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
+  List filteredTawarikhData = [];
+  List filteredChakhsiyatData = [];
+  List filteredMostala7atData = [];
   @override
-  Widget build(BuildContext context) {
-    // List wad3iyat = [
-    //   'الوضعية الاولى',
-    //   'الوضعية الثانية',
-    //   'الوضعية الثالثة',
-    //   'الوضعية الرابعة',
-    //   'do not exist'
-    // ];
-    List<String> _wa7adat = [
-      'nothing to see here',
-      'الوحدة الاولى',
-      'الوحدة الثانية',
-      'الوحدة الثالثة',
-    ];
-    List _quizzes = [
-      [quiz1, quiz2, quiz3, quiz4],
-      [quiz5, quiz6, quiz7, quiz8],
-      [quiz9, quiz10, quiz11, quiz11],
-    ];
-    List filteredTawarikhData = [];
-    List filteredChakhsiyatData = [];
-    List filteredMostala7atData = [];
-
+  void initState() {
+    super.initState();
     for (int i = 0; i < widget.courseAndQuiz[1].length; i++) {
       if (widget.courseAndQuiz[0] == widget.courseAndQuiz[1][i].wihda) {
         filteredTawarikhData.add(widget.courseAndQuiz[1][i]);
@@ -52,6 +34,21 @@ class _CourseAndQuiz2State extends State<CourseAndQuiz2> {
         filteredMostala7atData.add(widget.courseAndQuiz[3][i]);
       }
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    List<String> _wa7adat = [
+      'nothing to see here',
+      'الوحدة الاولى',
+      'الوحدة الثانية',
+      'الوحدة الثالثة',
+    ];
+    List _quizzes = [
+      [quiz1, quiz2, quiz3, quiz4],
+      [quiz5, quiz6, quiz7, quiz8],
+      [quiz9, quiz10, quiz11, quiz11],
+    ];
 
     return Directionality(
       textDirection: TextDirection.rtl,
