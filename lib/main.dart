@@ -15,8 +15,8 @@ class _MyAppState extends State<MyApp> {
       title: 'تاريخ19',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.grey[100],
-        primarySwatch: Colors.blue,
-        primaryColor: Colors.orange,
+        primarySwatch: Colors.orange,
+        //primaryColor: Colors.orange,
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
@@ -24,4 +24,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
