@@ -71,178 +71,182 @@ class _HomePageState extends State<HomePage> {
   ];
   var randomItem = allData[new Random().nextInt(allData.length)];
 
+  void push(int index) {
+    Navigator.pushNamed(
+      context,
+      '/courseAndQuiz2',
+      arguments: [
+        index + 1, //reprensents wi7da number
+        tawarikh,
+        chakhsiyat,
+        mostala7at,
+        dorossTabData[index],
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: Colors.amber[800],
-        body: SafeArea(
-          child: Container(
-            child: ListView(
-              children: <Widget>[
-                Container(
-                  padding: EdgeInsets.fromLTRB(0, 30, 10, 30),
-                  child: Row(
-                    children: <Widget>[
-                      Text(
-                        'مرحبا بكم ',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                          fontFamily: 'Amiri',
-                          color: Colors.white,
-                        ),
+      child: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          child: Scaffold(
+            backgroundColor: Colors.amber[800],
+            body: SafeArea(
+              child: Container(
+                child: ListView(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0, 30, 10, 30),
+                      child: Row(
+                        children: <Widget>[
+                          Text(
+                            'مرحبا بكم ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30,
+                              fontFamily: 'Amiri',
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'في تطبيق تاريخ19',
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w100,
+                              fontFamily: 'Amiri',
+                              color: Colors.white,
+                            ),
+                          )
+                        ],
                       ),
-                      Text(
-                        'في تطبيق تاريخ19',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w100,
-                          fontFamily: 'Amiri',
-                          color: Colors.white,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  height: 900,
-                  padding: EdgeInsets.fromLTRB(0, 20, 10, 40),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30)),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 20, 10),
-                        child: Text(
-                          'عناصر مختلفة',
-                          style: TextStyle(
-                              color: Colors.amber[800],
-                              fontSize: 20,
-                              fontFamily: 'Amiri'),
-                        ),
+                    ),
+                    Container(
+                      height: 900,
+                      padding: EdgeInsets.fromLTRB(0, 20, 10, 40),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            topRight: Radius.circular(30)),
                       ),
-                      SizedBox(
-                        height: 200,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 5,
-                          itemBuilder: (context, index) => GestureDetector(
-                            onTap: () {
-                              showAdOrNot();
-                              Navigator.pushNamed(context, myRoutes[index]);
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Stack(
-                                children: <Widget>[
-                                  Container(
-                                    width: 200,
-                                    height: 200,
-                                    decoration: BoxDecoration(
-                                        color: Colors.amber[200],
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                  ),
-                                  Positioned(
-                                    top: 10,
-                                    left: 10,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(100),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 0, 20, 10),
+                            child: Text(
+                              'عناصر مختلفة',
+                              style: TextStyle(
+                                  color: Colors.amber[800],
+                                  fontSize: 20,
+                                  fontFamily: 'Amiri'),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 200,
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: 5,
+                              itemBuilder: (context, index) => GestureDetector(
+                                onTap: () {
+                                  showAdOrNot();
+                                  Navigator.pushNamed(context, myRoutes[index]);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Stack(
+                                    children: <Widget>[
+                                      Container(
+                                        width: 200,
+                                        height: 200,
+                                        decoration: BoxDecoration(
+                                            color: Colors.amber[200],
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
                                       ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(5.0),
-                                        child: anasirMokhtalifaIcons[index],
+                                      Positioned(
+                                        top: 10,
+                                        left: 10,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(5.0),
+                                            child: anasirMokhtalifaIcons[index],
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                      Positioned(
+                                        child:
+                                            Text('${anasirMokhtalifa[index]}',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 30,
+                                                  fontWeight: FontWeight.w600,
+                                                )),
+                                        left: 10,
+                                        bottom: 10,
+                                      )
+                                    ],
                                   ),
-                                  Positioned(
-                                    child: Text('${anasirMokhtalifa[index]}',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.w600,
-                                        )),
-                                    left: 10,
-                                    bottom: 10,
-                                  )
-                                ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 20, 10),
-                        child: Text(
-                          'عنصر عشوائي',
-                          style: TextStyle(
-                              color: Colors.amber[800],
-                              fontSize: 20,
-                              fontFamily: 'Amiri'),
-                        ),
-                      ),
-                      Card(
-                        child: ListTile(
-                          leading: Icon(Icons.assistant),
-                          title: Text('${randomItem.itemOne}'),
-                          subtitle: Text('${randomItem.itemTwo}'),
-                          trailing: IconButton(
-                            icon: Icon(Icons.cached),
-                            onPressed: () {
-                              showAdOrNot();
-                              setState(() {
-                                randomItem = allData[
-                                    new Random().nextInt(allData.length)];
-                              });
-                            },
+                          SizedBox(height: 20),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 0, 20, 10),
+                            child: Text(
+                              'عنصر عشوائي',
+                              style: TextStyle(
+                                  color: Colors.amber[800],
+                                  fontSize: 20,
+                                  fontFamily: 'Amiri'),
+                            ),
                           ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 20, 10),
-                        child: Text(
-                          'تصفح حسب الوحدات',
-                          style: TextStyle(
-                              color: Colors.amber[800],
-                              fontSize: 20,
-                              fontFamily: 'Amiri'),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 220,
-                        child: ListView.builder(
-                          itemCount: 3,
-                          itemBuilder: (context, index) => Card(
+                          Card(
+                            child: ListTile(
+                              leading: Icon(Icons.assistant),
+                              title: Text('${randomItem.itemOne}'),
+                              subtitle: Text('${randomItem.itemTwo}'),
+                              trailing: IconButton(
+                                icon: Icon(Icons.cached),
+                                onPressed: () {
+                                  showAdOrNot();
+                                  setState(() {
+                                    randomItem = allData[
+                                        new Random().nextInt(allData.length)];
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 0, 20, 10),
+                            child: Text(
+                              'تصفح حسب الوحدات',
+                              style: TextStyle(
+                                  color: Colors.amber[800],
+                                  fontSize: 20,
+                                  fontFamily: 'Amiri'),
+                            ),
+                          ),
+                          Card(
                             color: Colors.amber[200],
                             child: ListTile(
                                 onTap: () {
                                   showAdOrNot();
-                                  Navigator.pushNamed(
-                                    context,
-                                    '/courseAndQuiz2',
-                                    arguments: [
-                                      index + 1, //reprensents wi7da number
-                                      tawarikh,
-                                      chakhsiyat,
-                                      mostala7at,
-                                      dorossTabData[index],
-                                    ],
-                                  );
+                                  push(0);
                                 },
                                 leading: Text(
-                                  '${index + 1}',
+                                  '1',
                                   style: TextStyle(
                                     color: Colors.amber[800],
                                     fontWeight: FontWeight.bold,
@@ -250,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 title: Text(
-                                  '${wa7adat[index]}',
+                                  '${wa7adat[0]}',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
@@ -260,12 +264,64 @@ class _HomePageState extends State<HomePage> {
                                 trailing: Icon(Icons.arrow_forward_ios,
                                     color: Colors.amber[800])),
                           ),
-                        ),
+                          Card(
+                            color: Colors.amber[200],
+                            child: ListTile(
+                                onTap: () {
+                                  showAdOrNot();
+                                  push(1);
+                                },
+                                leading: Text(
+                                  '2',
+                                  style: TextStyle(
+                                    color: Colors.amber[800],
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                title: Text(
+                                  '${wa7adat[1]}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                trailing: Icon(Icons.arrow_forward_ios,
+                                    color: Colors.amber[800])),
+                          ),
+                          Card(
+                            color: Colors.amber[200],
+                            child: ListTile(
+                                onTap: () {
+                                  showAdOrNot();
+                                  push(2);
+                                },
+                                leading: Text(
+                                  '3',
+                                  style: TextStyle(
+                                    color: Colors.amber[800],
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                title: Text(
+                                  '${wa7adat[2]}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                trailing: Icon(Icons.arrow_forward_ios,
+                                    color: Colors.amber[800])),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),
