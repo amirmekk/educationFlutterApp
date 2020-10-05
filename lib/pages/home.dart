@@ -60,15 +60,15 @@ class _HomeState extends State<Home> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('الرئيسية'),
+            label: 'الرئيسية',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            title: Text('بحث'),
+            label: 'بحث',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.star_half),
-            title: Text('المفضلة'),
+            label: 'المفضلة',
           ),
         ],
         selectedItemColor: Theme.of(context).primaryColor,
