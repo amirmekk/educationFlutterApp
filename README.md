@@ -1,16 +1,9 @@
 # tarikh19
 
-A new Flutter project.
+A history app designed to students in algeria, it has courses, quizzes, maps, exams and a lot more.
+Over 1K downloads in the [google play store](https://play.google.com/store/apps/details?id=com.tarikh19.tarikh19)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src='readme_screenshots/1.JPG'>
+<img src='readme_screenshots/2.JPG'>
+<img src='readme_screenshots/3.JPG'>
+<img src='readme_screenshots/4.JPG'>
