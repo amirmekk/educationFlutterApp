@@ -83,7 +83,7 @@ class _QuizState extends State<Quiz> {
                       ),
                     ),
                   ),
-                  FlatButton.icon(
+                  TextButton.icon(
                     label: Text(
                       'التالي',
                       style: TextStyle(

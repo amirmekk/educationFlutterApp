@@ -105,7 +105,7 @@ class _HomeState extends State<Home> {
           starRatingOptions: StarRatingOptions(),
           actionsBuilder: (_, stars) {
             return [
-              FlatButton(
+              TextButton(
                 child: Text('OK'),
                 onPressed: () async {
                   if (stars != null) {
@@ -118,7 +118,7 @@ class _HomeState extends State<Home> {
                               textDirection: TextDirection.rtl,
                               child: AlertDialog(
                                 actions: <Widget>[
-                                  FlatButton.icon(
+                                  TextButton.icon(
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
@@ -155,7 +155,7 @@ class _HomeState extends State<Home> {
                   }
                 },
               ),
-              FlatButton(
+              TextButton(
                   onPressed: () {
                     ratingConditions.reset();
                     Navigator.pop(context);

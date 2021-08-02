@@ -59,7 +59,7 @@ class _ImitihanatState extends State<Imitihanat> {
             );
           },
           title: Text('${2019 - i}'),
-          trailing: FlatButton(
+          trailing: TextButton(
               onPressed: () {
                 getSolution(i);
               },
